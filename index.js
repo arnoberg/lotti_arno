@@ -4,6 +4,8 @@ var path = require('path')
 var bodyParser= require('body-parser')
 var app = express();        
 var port = process.env.PORT || 4000;
+var firebaseURL = 'https://bruiloft-29cc3.firebaseio.com/';
+
 
 app.use(bodyParser.urlencoded({extended: true}))
 
@@ -34,3 +36,5 @@ app.post('/contact', (req, res) => {
     res.redirect('/')
 	})
 })
+
+

@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
-<link rel="shortcut icon" href="/favicon.ico" />
   <head>
-    <link rel=”shortcut icon” href=”/favicon.ico” type=”image/x-icon” />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -54,11 +52,20 @@
       <div class="container text-center">
         <h2>Laat je gegevens achter</h2>
          <form action="/contact" method="POST">
-           <input type="text" placeholder="naam" name="naam">
-           <input type="text" placeholder="adres" name="adres">
-           <input type="text" placeholder="email" name="email">
-           <input type="text" placeholder="favoriete feestnummer" name="lied">
-           <button type="verstuur">Verstuur</button>
+          <div class="form-group">
+            <input type="text" class="form-control" name="naam" aria-describedby="naamHelp" placeholder="naam">
+            <!-- <input type="text" placeholder="naam" name="naam"> -->
+            <!-- <label for ="adres">Adresgegevens</label> -->
+            <input type="text" class="form-control" name="adres" rows="3" aria-describedby="adreshelp" placeholder="adres">
+            <!-- <input type="text" placeholder="adres" name="adres"> -->
+            <!-- <label for="email">Emailadres</label> -->
+            <!-- <input type="text" placeholder="email" name="email"> -->
+            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="email">
+            <input type="text" class="form-control" name="liedje" aria-describedby="liedhelp" placeholder="Favoriete feestnummer">
+              <small id="emailHelp" class="form-text text-muted">Kunnen we vast een plaatje klaarzetten!</small>
+            <!-- <input type="text" placeholder="favoriete feestnummer" name="lied"> -->
+            <button type="verstuur" class="btn btn-primary">Verstuur</button>
+          </div>
          </form>
         </div>
     </section>
@@ -72,7 +79,7 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="portfolio-item">
-                    <img class="img-portfolio img-fluid" src="public/img/berlin.jpg">
+                    <img class="img-portfolio img-fluid" src="public/img/sdpp - 1.jpg">
                 </div>
               </div>
               <div class="col-md-4">
@@ -100,11 +107,109 @@
                     <img class="img-portfolio img-fluid" src="public/img/peru2.jpg">
                 </div>
               </div>
+              <div class="col-md-4">
+                <div class="portfolio-item">
+                    <img class="img-portfolio img-fluid" src="public/img/sdpp - 2.jpg">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="portfolio-item">
+                    <img class="img-portfolio img-fluid" src="public/img/sdpp - 3.jpg">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="portfolio-item">
+                    <img class="img-portfolio img-fluid" src="public/img/sdpp - 4.jpg">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="portfolio-item">
+                    <img class="img-portfolio img-fluid" src="public/img/sdpp - 5.jpg">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="portfolio-item">
+                    <img class="img-portfolio img-fluid" src="public/img/sdpp - 6.jpg">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="portfolio-item">
+                    <img class="img-portfolio img-fluid" src="public/img/sdpp - 7.jpg">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="portfolio-item">
+                    <img class="img-portfolio img-fluid" src="public/img/sdpp - 8.jpg">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="portfolio-item">
+                    <img class="img-portfolio img-fluid" src="public/img/sdpp - 9.jpg">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="portfolio-item">
+                    <img class="img-portfolio img-fluid" src="public/img/sdpp - 10.jpg">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="portfolio-item">
+                    <img class="img-portfolio img-fluid" src="public/img/sdpp - 11.jpg">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="portfolio-item">
+                    <img class="img-portfolio img-fluid" src="public/img/sdpp - 12.jpg">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="portfolio-item">
+                    <img class="img-portfolio img-fluid" src="public/img/sdpp - 13.jpg">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="portfolio-item">
+                    <img class="img-portfolio img-fluid" src="public/img/sdpp - 14.jpg">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="portfolio-item">
+                    <img class="img-portfolio img-fluid" src="public/img/sdpp - 15.jpg">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="portfolio-item">
+                    <img class="img-portfolio img-fluid" src="public/img/sdpp - 16.jpg">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="portfolio-item">
+                    <img class="img-portfolio img-fluid" src="public/img/sdpp - 17.jpg">
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+      <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBNz5txq1Dwavt5_mK1AktN-49BkJ0ETgs",
+        authDomain: "bruiloft-29cc3.firebaseapp.com",
+        databaseURL: "https://bruiloft-29cc3.firebaseio.com",
+        projectId: "bruiloft-29cc3",
+        storageBucket: "bruiloft-29cc3.appspot.com",
+        messagingSenderId: "621959496829"
+      };
+      firebase.initializeApp(config);
+      </script>
+
+    <script src="//www.powr.io/powr.js?external-type=html"></script> 
+    <div class="powr-countdown-timer" id="31500373_1519074026"></div>
 
     
     <!-- Bootstrap core JavaScript -->
@@ -117,6 +222,10 @@
 
     <!-- Custom scripts for this template -->
     <script src="public/js/stylish-portfolio.js"></script>
+
+    <!-- like button scripts -->
+    <script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
+    <script src="js/like-button.js"></script>
 
   </body>
 

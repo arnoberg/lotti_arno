@@ -2,7 +2,7 @@
 var express = require('express');
 var path = require('path')
 var bodyParser= require('body-parser')
-var favicon = require('serve-favicon');
+//var favicon = require('serve-favicon');
 var app = express();        
 var port = process.env.PORT || 4000;
 var firebaseURL = 'https://bruiloft-29cc3.firebaseio.com/';
@@ -25,7 +25,7 @@ MongoClient.connect('mongodb://userlshtktns:hek7387@ds249128.mlab.com:49128/brui
 app.use('/public', express.static(path.join(__dirname + "/public")));
 app.use('/vendor', express.static(path.join(__dirname + "/vendor")));
 
-app.use(favicon(__dirname + '/public/img/favicon.ico'));
+//app.use(favicon(__dirname + '/public/img/favicon.ico'));
 
 
 app.get('/', function(req, res) {

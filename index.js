@@ -9,7 +9,6 @@ var firebaseURL = 'https://bruiloft-29cc3.firebaseio.com/';
 
 
 app.use(bodyParser.urlencoded({extended: true}))
-app.use(favicon(__dirname + '/public/img/favicon.ico'));
 
 var url = "mongodb://localhost:27017/bruiloft";
 
@@ -26,7 +25,7 @@ MongoClient.connect('mongodb://userlshtktns:hek7387@ds249128.mlab.com:49128/brui
 app.use('/public', express.static(path.join(__dirname + "/public")));
 app.use('/vendor', express.static(path.join(__dirname + "/vendor")));
 
-
+app.use(favicon(__dirname + '/public/img/favicon.ico'));
 
 
 app.get('/', function(req, res) {

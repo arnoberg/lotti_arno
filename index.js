@@ -2,15 +2,12 @@
 var express = require('express');
 var path = require('path')
 var bodyParser= require('body-parser')
-var favicon = require('serve-favicon');
 var app = express();        
 var port = process.env.PORT || 4000;
 var firebaseURL = 'https://bruiloft-29cc3.firebaseio.com/';
 
 
 app.use(bodyParser.urlencoded({extended: true}))
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico'))); 
-
 
 var url = "mongodb://localhost:27017/bruiloft";
 

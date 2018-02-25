@@ -14,7 +14,7 @@ var url = "mongodb://localhost:27017/bruiloft";
 const MongoClient = require('mongodb').MongoClient
 
 var db
-MongoClient.connect('mongodb://arno:bergvanden@ds141028.mlab.com:41028/bruiloft', (err, client) => {
+MongoClient.connect('mongodb://userlshtktns:hek7387@ds249128.mlab.com:49128/bruiloft', (err, client) => {
   if (err) return console.log(err)
   db = client.db('bruiloft')
   app.listen(port);

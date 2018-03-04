@@ -9,7 +9,7 @@ var port = process.env.PORT || 4000;
 var firebaseURL = 'https://bruiloft-29cc3.firebaseio.com/';
 
 app.use(bodyParser.urlencoded({extended: true}))
-app.use(favicon(__dirname + '/public/img/favicon.ico'));
+app.use(favicon(__dirname + '/public/img/favicon.png'));
 
 
 // enable ssl redirect

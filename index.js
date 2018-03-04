@@ -35,11 +35,15 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
+app.get('/thankyou.html', function(req, res) {
+    res.sendFile(path.join(__dirname + '/thankyou.html'));
+});
+
 app.post('/contact', (req, res) => {
 	db.collection('contact').save(req.body, (err, result) => {
     if (err) return console.log(err)
     console.log('saved to database')
-    res.redirect('/')
+    res.redirect('/thankyou.html')
 	})
 })
 

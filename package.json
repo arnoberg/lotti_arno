@@ -32,6 +32,7 @@
     "bootstrap": "^4.0.0-beta",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
+    "express-favicon": "^2.0.0",
     "express-flash": "0.0.2",
     "express-session": "^1.15.6",
     "font-awesome": "4.7.0",

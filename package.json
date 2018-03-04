@@ -32,6 +32,7 @@
     "bootstrap": "^4.0.0-beta",
     "express": "^4.16.2",
     "font-awesome": "4.7.0",
+    "heroku-ssl-redirect": "0.0.4",
     "jquery": "^3.2.1",
     "jquery.easing": "^1.4.1",
     "mongodb": "^3.0.2",

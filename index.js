@@ -34,11 +34,28 @@ app.use('/vendor', express.static(path.join(__dirname + "/vendor")));
 
 
 app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/access.html'));
+});
+
+app.get('/index.html', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
+
 app.get('/thankyou.html', function(req, res) {
     res.sendFile(path.join(__dirname + '/thankyou.html'));
+});
+
+app.get('/accessdenied.html', function(req, res) {
+    res.sendFile(path.join(__dirname + '/accessdenied.html'));
+});
+
+app.post('/rsvp', (req, res) => {
+	db.collection('rsvp').save(req.body, (err, result) => {
+    if (err) return console.log(err)
+    console.log('saved to database')
+    res.redirect('/thankyou.html')
+	})
 });
 
 app.post('/contact', (req, res) => {
@@ -47,6 +64,17 @@ app.post('/contact', (req, res) => {
     console.log('saved to database')
     res.redirect('/thankyou.html')
 	})
-})
+});
 
+//hier moet nog op basis van de input een if statement....
+app.post('/check', (req, res) => {
+    console.log('regel 1')
+    if(code = 'handinhand') {
+        res.redirect('/index.html')
+        console.log('regel 2')
+    }
+    else {res.redirect('/accessdenied.html')
+    console.log('regel 3')
+    }
+});
 

@@ -26,19 +26,28 @@ body {
 .text-vertical-center h1 {
     font-size: 6.5em;
     font-weight: 700;
+    margin: 500;
+    padding: 0;
+    color: white;
+}
+
+/*added this for h2 info*/
+.text-vertical-center h2 {
+    font-size: 6.5em;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+/*added this for h3 info*/
+.text-vertical-center h3 {
+    font-size: 2.5em;
+    font-weight: 200;
     margin: 0;
     padding: 0;
     color: white;
 }
 
-/*added this for h3 info*/
-.text-vertical-center h3 {
-    font-size: 2.5em;
-    font-weight: 700;
-    margin: 0;
-    padding: 0;
-    color: white;
-}
 
 
 /* Custom Button Styles */
@@ -174,7 +183,7 @@ hr.small {
     display: table;
     width: 100%;
     height: 100%;
-    background: url(../img/thailand.jpg) no-repeat center center scroll;
+    background: url(../img/salkantai.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -207,7 +216,7 @@ hr.small {
     width: 100%;
     height: 400px;
     color: #fff;
-    background: url(../img/foto5.jpg) no-repeat center center scroll;
+    background: url(../img/boom.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

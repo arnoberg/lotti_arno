@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="website voor bruiloft">
+    <meta name="author" content="Arno">
     <meta name="description" content="Lotti & Arno - bruiloft - trouwen - Rotterdam - 23 november">
     <meta property="og:title" content="Wij gaan trouwen!" />
     <meta property="og:url" content="https://www.lotti-arno.nl" />
@@ -26,132 +26,233 @@
 
     
   </head>
-
   <body>
 
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://plugins.eventable.com/eventable.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script', 'eventable-script');</script>
+    <!-- Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">
+          <i class="fa fa-times"></i>
+        </a>
+        <li>
+          <a class="js-scroll-trigger" href="#top">Home</a>
+        </li>
+        <li>
+            <a class="js-scroll-trigger" href="#rsvp">RSVP</a>
+          </li>
+        <li>
+          <a class="js-scroll-trigger" href="#programma">Programma</a>
+        </li>
+        <li>
+            <a class="js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+        <li>
+          <a class="js-scroll-trigger" href="#selfies">Foto's</a>
+        </li>
+        <li>
+          <a class="js-scroll-trigger" href="#locatie" onclick=$( "#menu-close").click();>Locatie</a>
+        </li>
+
+
+      </ul>
+    </nav>
+
+
 
     <!-- Header -->
     <header class="header" id="top">
       <div class="text-vertical-center">
-        <h1>Lotti & Arno</h1>
+        <h1><p>&nbsp;</p></h1>
+        <h1><p>&nbsp;</p></h1>
+        <h2>Lotti & Arno</h2>
         <h3>GAAN TROUWEN!</h3>
         <br>
-        <a class="btn btn-light btn-lg js-scroll-trigger">23-November</a>
-        <a class="btn btn-light btn-lg js-scroll-trigger">in Rotterdam</a>
-        
-
+        <a class="btn btn-light btn-lg js-scroll-trigger" href="#programma">2-Juni</a>
+        <a class="btn btn-light btn-lg js-scroll-trigger" href="#locatie">in Rotterdam</a>
       </div>
     </header>
 
     <!-- About -->
     <section id="description" class="about">
       <div class="container text-center">
-        <!-- <h2>Stylish Portfolio is the perfect theme for your next project!</h2> -->
-        <p class="lead">Het is zover... De datum is gekozen waarop wij gaan trouwen! Schrijf het in je agenda en onthoud de datum.
-
-        Omdat we je te zijner tijd ook graag een kaartje willen sturen, zou je hier je gegevens willen achterlaten?</a>
+        <p class="lead">Het is zover...  Lotti & Arno gaan trouwen! En we willen graag dat jij erbij bent! Laat ons weten of je ook komt!</a>
       </div>
     </section>
 
-    <!-- input form -->
-    <section id="form" class="about">
+   <!-- RSVP form -->
+    <section id="form" class="rsvp">
       <div class="container text-center">
-         <form action="/contact" method="POST">
+         <form action="/rsvp" method="POST">
           <div class="form-group">
-            <!-- <input type="text" class="form-control" name="titel" placeholder="titel"> -->
-            <input type="text" class="form-control" name="naam" aria-describedby="naamHelp" placeholder="Naam">
-            <!-- <input type="text" placeholder="naam" name="naam"> -->
-            <!-- <label for ="adres">Adresgegevens</label> -->
-            <input type="text" class="form-control" name="straat" rows="3" aria-describedby="straathelp" placeholder="Straat + Huisnummer">
-            <input type="text" class="form-control" name="postcode" rows="3" aria-describedby="postcodehelp" placeholder="Postcode">
-            <input type="text" class="form-control" name="plaats" rows="3" aria-describedby="plaatshelp" placeholder="Plaats">
-            <!-- <input type="text" placeholder="adres" name="adres"> -->
-            <!-- <label for="email">Emailadres</label> -->
-            <!-- <input type="text" placeholder="email" name="email"> -->
-            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Emailadres">
-            <input type="text" class="form-control" name="liedje" aria-describedby="liedhelp" placeholder="Favoriete feestnummer">
-            <button type="submit" class="btn btn-primary">Verstuur</button>
-            <!-- Button trigger modal -->
-            <!-- <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">verstuur</button> -->
-            
-            <!-- Modal pop up-->
-            <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Je gegevens zijn verstuurd!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div> -->
+            <a class="lead">Ben je aanwezig op 2 juni?</a>  
+            <!-- <label for="rsvpChoice1" class="radio-inline"><input type="radio" name="optradio">Ja</label>
+            <label for="rsvpChoice2" class="radio-inline"><input type="radio" name="optradio">Nee</label> -->
+            <a class="lead">Ja   </a><input type="radio" name="rsvp" id="rsvpChoice1" value="ja" required="true"> 
+            <a class="lead">Nee   </a><input type="radio" name="rsvp" id="rsvpChoice2" value="nee" required="true">
+            </h3>
+            <input type="number" class="form-control" name="aantal" aria-describedby="aantalHelp" placeholder="Aantal personen">
+            <input type="text" class="form-control" name="naam" aria-describedby="naamHelp" placeholder="Naam/Namen">
+            <input type="text" class="form-control" name="allergie" aria-describedby="allergieHelp" placeholder="Allergiën of andere dieetwensen?">
+            <button type="submit" class="btn btn-primary">RSVP</button>
           </div> 
         </form>
-
       </div>
     </section>
 
-
-    <section id="portfolio" class="portfolio">
+    <!-- Services -->
+    <section id="programma" class="services bg-primary text-white">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-15 mx-auto text-center">
+        <div class="row text-center">
+          <div class="col-lg-10 mx-auto">
+            <h2>Hoe ziet de dag eruit?</h2>
             <hr class="small">
             <div class="row">
-              <div class="col-md-4">
-                <div class="portfolio-item">
-                    <img class="img-portfolio img-fluid" src="public/img/ring b.jpg">
+              <div class="col-md-3 col-sm-6">
+                <div class="service-item">
+                  <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-heart fa-stack-1x text-primary"></i>
+                  </span>
+                  <h2>14:00</h2>
+                  <h4>
+                      <strong>Ceremonie</strong>
+                  </h4>
+                  <p>Pelgrimvaderskerk</p>
+                  <!-- <a href="#" class="btn btn-light">Learn More</a> -->
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class="portfolio-item">
-                    <img class="img-portfolio img-fluid" src="public/img/peru b.jpg">
+              <div class="col-md-3 col-sm-6">
+                <div class="service-item">
+                  <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-subway fa-stack-1x text-primary"></i>
+                  </span>
+                  <h2>16:30</h2>
+                  <h4>
+                      <strong>Historische tramrit</strong>
+                  </h4>
+                  <!-- <p>Pelgrimvaderskerk naar Harmonie 23</p> -->
+                  <!-- <a href="savethedate.html" class="btn btn-light">Learn More</a> -->
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class="portfolio-item">
-                    <img class="img-portfolio img-fluid" src="public/img/peru 2 b.jpg">
+              <div class="col-md-3 col-sm-6">
+                <div class="service-item">
+                  <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-beer fa-stack-1x text-primary"></i>
+                  </span>
+                  <h2>17:00</h2>
+                  <h4>
+                      <strong>Borrel & Diner</strong>
+                  </h4>
+                  <p>Harmonie</p>
+                  <!-- <a href="#" class="btn btn-light">Learn More</a> -->
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class="portfolio-item">
-                    <img class="img-portfolio img-fluid" src="public/img/dam h.jpg">
+              <div class="col-md-3 col-sm-6">
+                <div class="service-item">
+                  <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-music fa-stack-1x text-primary"></i>
+                  </span>
+                  <h2>tot 24:00</h2>
+                  <h4>
+                      <strong>Feest</strong>
+                  </h4><p>Harmonie</p>
+                  <!-- <a href="#" class="btn btn-light">Learn More</a> -->
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class="portfolio-item">
-                    <img class="img-portfolio img-fluid" src="public/img/italie h.jpg">
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="portfolio-item">
-                    <img class="img-portfolio img-fluid" src="public/img/koffie h.jpg">
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="portfolio-item">
-                    <img class="img-portfolio img-fluid" src="public/img/strand h.jpg">
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="portfolio-item">
-                    <img class="img-portfolio img-fluid" src="public/img/zand h.jpg">
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="portfolio-item">
-                    <img class="img-portfolio img-fluid" src="public/img/sneeuw h.jpg">
+            </div>
+            <!-- /.row (nested) -->
+          </div>
+          <!-- /.col-lg-10 -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+
+    <!-- contact -->
+    <section id="contact" class="contact">
+      <div class="container text-center">
+        <p></p>
+        <h4>Wij stellen u graag voor aan onze ceremoniemeesters: 
+        <h4>Sander & Renske</h4>
+    </section>
+
+	  <!-- Callout -->
+    <section id="end" class= "callout">
+	      <div class="text-vertical-center">
+	        <!-- <h1>We zien je 2 juni!</h1> -->
+	     	 </div>
+    </section>
+
+       <!-- foto's -->
+       <section id="selfies" class="portfolio">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-15 mx-auto text-center">
+                <hr class="small">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img class="img-portfolio img-fluid" src="public/img/ring b.jpg">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img class="img-portfolio img-fluid" src="public/img/peru b.jpg">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img class="img-portfolio img-fluid" src="public/img/peru 2 b.jpg">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img class="img-portfolio img-fluid" src="public/img/dam h.jpg">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img class="img-portfolio img-fluid" src="public/img/italie h.jpg">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img class="img-portfolio img-fluid" src="public/img/koffie h.jpg">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img class="img-portfolio img-fluid" src="public/img/strand h.jpg">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img class="img-portfolio img-fluid" src="public/img/zand h.jpg">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img class="img-portfolio img-fluid" src="public/img/sneeuw h.jpg">
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-    </section>
+    
+        </section>
+    
+        <!-- Map -->
+        <section id="locatie" class="map">
+          <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/d/embed?mid=1TSE__fDZJYHXU1e_pZ_iOuYe9nDg_V2H"></iframe>
+        </section>
 
     <!-- firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
@@ -169,6 +270,7 @@
       </script>
 
     <script src="//www.powr.io/powr.js?external-type=html"></script> 
+    <h1><p>&nbsp;</p></h1>
     <div class="powr-countdown-timer" id="31500373_1519074026"></div>
 
     
@@ -186,7 +288,6 @@
 
     <!-- like button scripts -->
     <script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
-    <script src="js/like-button.js"></script>
 
   </body>
 

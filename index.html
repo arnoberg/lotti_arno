@@ -24,6 +24,7 @@
     <!-- Custom CSS -->
     <link href="public/css/stylish-portfolio.css" rel="stylesheet">
 
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyB8ks9sm34eJ2cArG0YsYkaoWNyIl9QJlA" type="text/javascript"></script>
     
   </head>
   <body>
@@ -41,19 +42,16 @@
           <a class="js-scroll-trigger" href="#top">Home</a>
         </li>
         <li>
-            <a class="js-scroll-trigger" href="#rsvp">RSVP</a>
+            <a class="js-scroll-trigger" href="#form">RSVP</a>
           </li>
         <li>
           <a class="js-scroll-trigger" href="#programma">Programma</a>
         </li>
         <li>
-            <a class="js-scroll-trigger" href="#contact">Contact</a>
-          </li>
-        <li>
-          <a class="js-scroll-trigger" href="#selfies">Foto's</a>
+            <a class="js-scroll-trigger" href="#informatie">Informatie</a>
         </li>
         <li>
-          <a class="js-scroll-trigger" href="#locatie" onclick=$( "#menu-close").click();>Locatie</a>
+          <a class="js-scroll-trigger" href="#locatie" onclick=$( "#menu-close").click();>Locaties</a>
         </li>
 
 
@@ -76,10 +74,11 @@
     </header>
 
     <!-- About -->
-    <section id="description" class="about" style="background-color:powderblue;">
+    <section id="description" class="about bg-info text-white">
       <div class="container text-center">
         <p class="lead">Het is zover...  Lotti & Arno gaan trouwen! En we willen graag dat jij erbij bent! Laat ons weten of je ook komt!</a>
       </div>
+      <p></p>
     </section>
 
    <!-- RSVP form -->
@@ -87,7 +86,8 @@
       <div class="container text-center">
          <form action="/rsvp" method="POST">
           <div class="form-group">
-            <a class="lead">Ben je aanwezig op 2 juni?</a>  
+            <br></br>
+            <a class="lead"><b>Ben je aanwezig op 2 juni?</b></a>  
             <!-- <label for="rsvpChoice1" class="radio-inline"><input type="radio" name="optradio">Ja</label>
             <label for="rsvpChoice2" class="radio-inline"><input type="radio" name="optradio">Nee</label> -->
             <a class="lead">Ja   </a><input type="radio" name="rsvp" id="rsvpChoice1" value="ja" required="true"> 
@@ -95,15 +95,17 @@
             </h3>
             <input type="number" class="form-control" name="aantal" aria-describedby="aantalHelp" placeholder="Aantal personen">
             <input type="text" class="form-control" name="naam" aria-describedby="naamHelp" placeholder="Naam/Namen">
+            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Emailadres">
             <input type="text" class="form-control" name="allergie" aria-describedby="allergieHelp" placeholder="Allergiën of andere dieetwensen?">
+            <input type="text" class="form-control" name="opmerkingen" aria-describedby="opmerkingenHelp" placeholder="Overige opmerkingen">
             <button type="submit" class="btn btn-primary">RSVP</button>
           </div> 
         </form>
       </div>
     </section>
 
-    <!-- Services -->
-    <section id="programma" class="services bg-primary text-white">
+    <!-- Programma -->
+    <section id="programma" class="services bg-info text-white">
       <div class="container">
         <div class="row text-center">
           <div class="col-lg-10 mx-auto">
@@ -176,7 +178,7 @@
     </section>
 
     <!-- contact -->
-    <section id="contact" class="contact">
+    <section id="informatie">
       <div class="container text-center">
         <p></p>
         <h4>Wij stellen u graag voor aan onze ceremoniemeesters: 
@@ -190,69 +192,124 @@
 	     	 </div>
     </section>
 
-       <!-- foto's -->
-       <section id="selfies" class="portfolio">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-15 mx-auto text-center">
-                <hr class="small">
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="portfolio-item">
-                        <img class="img-portfolio img-fluid" src="public/img/ring b.jpg">
-                    </div>
+       
+    
+    <!-- Map  -->
+    <!-- <section id="locatie" class="map">
+      <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/d/embed?mid=1TSE__fDZJYHXU1e_pZ_iOuYe9nDg_V2H"></iframe>
+    </section> -->
+
+    <!-- Map -->
+    <!-- <section id="contact" class="map">
+        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2461.39078525774!2d4.4467001156302945!3d51.90858098911183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c434ecd7ff0dd7%3A0xc60fa435e8c1265f!2sPelgrimvaderskerk!5e0!3m2!1snl!2snl!4v1523474234592"></iframe>
+    </section> -->
+    
+    <!-- Map with google API -->
+    <section id="locatie" class="map">
+            
+      <div id="map" class="map">
+      </div>
+      <script type="text/javascript">
+            var locations = [
+              ['<h3>Pelgrimvaderskerk</h3>' +  '<p>Hier zal de ceremonie plaatsvinden van ons huwelijk.</p>', 51.908578, 4.448889, 4],
+              ['<h3>De Harmonie</h3>' + '<p>Adres: Westersingel 95, 3015 LC Rotterdam </p>' + '<a href="http://restaurant23.deharmonierotterdam.nl/">' + 'website: de Harmonie</a>' + '<p>Op deze locatie zal de borrel, dinner en feest plaatsvinden</p>', 51.913833, 4.474797, 4]
+            ];
+
+            
+        
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 13,
+              center: new google.maps.LatLng(51.910999, 4.468542),
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+        
+            var infowindow = new google.maps.InfoWindow();
+        
+            var marker, i;
+        
+            for (i = 0; i < locations.length; i++) { 
+              marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                map: map
+              });
+        
+              google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
+                  infowindow.setContent(locations[i][0]);
+                  infowindow.open(map, marker);
+                }
+              })(marker, i));
+            }
+          </script>
+        
+    </section>
+    
+
+    
+
+    <!-- countdown -->
+    <h1><p>&nbsp;</p></h1>
+    <div class="powr-countdown-timer" id="31500373_1519074026"></div>
+
+
+    <!-- foto's -->
+    <section id="selfies" class="portfolio">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-15 mx-auto text-center">
+              <hr class="small">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="portfolio-item">
+                      <img class="img-portfolio img-fluid" src="public/img/ring b.jpg">
                   </div>
-                  <div class="col-md-4">
-                    <div class="portfolio-item">
-                        <img class="img-portfolio img-fluid" src="public/img/peru b.jpg">
-                    </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="portfolio-item">
+                      <img class="img-portfolio img-fluid" src="public/img/peru b.jpg">
                   </div>
-                  <div class="col-md-4">
-                    <div class="portfolio-item">
-                        <img class="img-portfolio img-fluid" src="public/img/peru 2 b.jpg">
-                    </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="portfolio-item">
+                      <img class="img-portfolio img-fluid" src="public/img/peru 2 b.jpg">
                   </div>
-                  <div class="col-md-4">
-                    <div class="portfolio-item">
-                        <img class="img-portfolio img-fluid" src="public/img/dam h.jpg">
-                    </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="portfolio-item">
+                      <img class="img-portfolio img-fluid" src="public/img/dam h.jpg">
                   </div>
-                  <div class="col-md-4">
-                    <div class="portfolio-item">
-                        <img class="img-portfolio img-fluid" src="public/img/italie h.jpg">
-                    </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="portfolio-item">
+                      <img class="img-portfolio img-fluid" src="public/img/italie h.jpg">
                   </div>
-                  <div class="col-md-4">
-                    <div class="portfolio-item">
-                        <img class="img-portfolio img-fluid" src="public/img/koffie h.jpg">
-                    </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="portfolio-item">
+                      <img class="img-portfolio img-fluid" src="public/img/koffie h.jpg">
                   </div>
-                  <div class="col-md-4">
-                    <div class="portfolio-item">
-                        <img class="img-portfolio img-fluid" src="public/img/strand h.jpg">
-                    </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="portfolio-item">
+                      <img class="img-portfolio img-fluid" src="public/img/strand h.jpg">
                   </div>
-                  <div class="col-md-4">
-                    <div class="portfolio-item">
-                        <img class="img-portfolio img-fluid" src="public/img/zand h.jpg">
-                    </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="portfolio-item">
+                      <img class="img-portfolio img-fluid" src="public/img/zand h.jpg">
                   </div>
-                  <div class="col-md-4">
-                    <div class="portfolio-item">
-                        <img class="img-portfolio img-fluid" src="public/img/sneeuw h.jpg">
-                    </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="portfolio-item">
+                      <img class="img-portfolio img-fluid" src="public/img/sneeuw h.jpg">
                   </div>
                 </div>
               </div>
             </div>
           </div>
-    
-        </section>
-    
-        <!-- Map -->
-        <section id="locatie" class="map">
-          <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/d/embed?mid=1TSE__fDZJYHXU1e_pZ_iOuYe9nDg_V2H"></iframe>
-        </section>
+        </div>
+  
+      </section>
 
     <!-- firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
@@ -270,8 +327,7 @@
       </script>
 
     <script src="//www.powr.io/powr.js?external-type=html"></script> 
-    <h1><p>&nbsp;</p></h1>
-    <div class="powr-countdown-timer" id="31500373_1519074026"></div>
+    
 
     
     <!-- Bootstrap core JavaScript -->

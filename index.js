@@ -66,16 +66,4 @@ app.post('/contact', (req, res) => {
 	})
 });
 
-//hier moet nog op basis van de input een if statement....
-app.post('/check', (req, res) => {
-    console.log('regel 1')
-    if(code == 'handinhand') {
-        res.redirect('/index.html')
-        console.log('regel 2')
-    }
-    else {res.redirect('/accessdenied.html')
-    console.log('regel 3')
-    }
-});
-
 

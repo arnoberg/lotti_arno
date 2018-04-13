@@ -40,7 +40,8 @@
     "jquery": "^3.2.1",
     "jquery.easing": "^1.4.1",
     "mongodb": "^3.0.2",
-    "popper.js": "^1.11.1"
+    "popper.js": "^1.11.1",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "browser-sync": "2.18.13",

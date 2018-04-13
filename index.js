@@ -1,15 +1,18 @@
 /// START
 var express = require('express');
+var favicon = require('serve-favicon')
 var path = require('path')
-var bodyParser= require('body-parser')
-var favicon = require('express-favicon');
-var sslRedirect = require('heroku-ssl-redirect');
 var app = express();        
+app.use(favicon(path.join(__dirname,'public','img','favicon.ico')));
+
+var bodyParser= require('body-parser')
+var sslRedirect = require('heroku-ssl-redirect');
 var port = process.env.PORT || 4000;
 var firebaseURL = 'https://bruiloft-29cc3.firebaseio.com/';
 
+
+
 app.use(bodyParser.urlencoded({extended: true}))
-app.use(favicon(__dirname + '/public/img/favicon.png'));
 
 
 // enable ssl redirect

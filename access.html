@@ -25,12 +25,7 @@
       }
     </script>    
 
-    <!-- Callout -->
-    <section id="end" class= "callout">
-      <div class="text-vertical-center">
-        <!-- <h1>We zien je 2 juni!</h1> -->
-        </div>
-    </section>
+
     
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -47,12 +42,19 @@
 
   <body>
 
+    <!-- Callout -->
+    <section id="end" class= "callout">
+        <div class="text-vertical-center">
+          <!-- <h1>We zien je 2 juni!</h1> -->
+          </div>
+    </section>
+
     <!-- About -->
     <section id="description" class="about">
         <div class="container text-center">
           <form onsubmit="inputCheck();"action="javascript:void(0);">
             <div class="form-group">
-              <p class="lead">ACCESSCODE:</a>
+              <!-- <p class="lead">ACCESSCODE:</a> -->
               <input id="inputPassword" type="password" class="form-control" name="code" aria-describedby="code" placeholder="accesscode">
             <button type="button" onclick="inputCheck()" class="btn btn-dark btn-lg js-scroll-trigger">OK</button>
         </div>

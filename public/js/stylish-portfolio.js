@@ -89,3 +89,45 @@ var onMapClickHandler = function(event) {
 // Enable map zooming with mouse scroll when the user clicks the map
 $('.map').on('click', onMapClickHandler);
 
+
+// EMAIL to be still configured
+// Create a Transport instance using nodemailer
+var nodemailer = require('nodemailer');
+sails.log.debug('try to send mail');
+var smtpTransport = nodemailer.createTransport("SMTP", {
+    service: "Gmail",
+    auth: {
+      XOAuth2: {
+        user: "xxx@gmail.com", // Your gmail address.
+        clientId: "YOUR_CLIENT_ID",
+        clientSecret: "YOUR_CLIENT_SECRET",
+        refreshToken: "REFRESH_TOKEN_YOU_JUST_FOUND"
+      }
+    }
+  });
+// Setup mail configuration
+var mailOptions = {
+    from: 'xxx@gmail.com', // sender address
+    to: RECEIVER_EMAIL", // list of receivers
+    subject: 'A_SUBJECT', // Subject line
+    // text: '', // plaintext body
+    html: htmlBody // html body
+  };
+// send mail
+  smtpTransport.sendMail(mailOptions, function(error, info) {
+    if (error) {
+      sails.log.debug(error);
+      return res.notOk({
+        status: 'error',
+        msg: 'Email sending failed'
+      })
+    } else {
+      console.log('Message %s sent: %s', info.messageId, info.response);
+      return res.ok({
+        status: 'ok',
+        msg: 'Email sent'
+      })
+    }
+    smtpTransport.close();
+  });
+

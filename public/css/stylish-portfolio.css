@@ -201,6 +201,15 @@ hr.small {
     padding: 20px 0;
 }
 
+/* video */
+
+.video {
+    padding: 20px 0;
+    background-color: white;
+    margin: 0 auto;
+	border: 10px double #ddd;
+}
+
 
 /* Services */
 
